@@ -1,0 +1,16 @@
+developed for english text
+
+
+install gTTS
+install mpg321
+install PyPDF2
+
+
+works for inputted text, .txt, .pdf
+
+
+in progress:  
+web text 
+epub
+mobi
+
