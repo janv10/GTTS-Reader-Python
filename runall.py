@@ -1,6 +1,7 @@
 from readers import *
 from error import *  
 
+instructions()
 
 inputtedText = input("Please enter a number: ")
 lan = 'en'

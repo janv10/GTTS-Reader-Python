@@ -10,7 +10,6 @@ works for inputted text, .txt, .pdf, png
 
 
 in progress:  
-clean code
 more than one page
 troubleshoot with different files
 remove mp3 after reading it
