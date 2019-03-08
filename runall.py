@@ -1,5 +1,5 @@
 from readers import *
-from error import *  
+from logistics import *  
 
 instructions()
 
@@ -21,6 +21,14 @@ elif (inputtedText == '3'):
 #.png Reader
 elif(inputtedText == '4'):
     pngReader()
+
+#.jpg Reader
+elif(inputtedText == '5'):
+    jpgReader()
+
+#.pub Reader
+elif(inputtedText == '6'):
+    epubReader()
 
 elif (inputtedText == 'x'):
     print ("Thank you for using Reader. Now exiting...")

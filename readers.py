@@ -11,8 +11,9 @@ except ImportError:
     import Image
 import pytesseract
 
-
-
+#.epub
+import ebooklib
+from ebooklib import epub
 
 lan = 'en'
 def stringReader():
@@ -24,7 +25,7 @@ def stringReader():
 
 
 def txtReader():
-    readFileName = input("Enter a file name: ")
+    readFileName = input("Enter a .txt file name: ")
     f = open(readFileName, "r")
     text = f.read()
     print (text)
@@ -35,7 +36,7 @@ def txtReader():
 
 
 def pdfReader():
-    readFileName = input("Enter a file name: ")
+    readFileName = input("Enter a .pdf file name: ")
     f = open(readFileName, "rb")
     read_pdf = PyPDF2.PdfFileReader(f)
     number_of_pages = read_pdf.getNumPages()
@@ -50,10 +51,29 @@ def pdfReader():
         os.remove("pdfreader.mp3")
 
 def pngReader():
-    readFileName = input("Enter a file name: ")
+    readFileName = input("Enter a .png file name: ")
     text = pytesseract.image_to_string(Image.open(readFileName))
     print(text)
     tts = gTTS(text=text, lang=lan, slow=False)
     tts.save("pngreader.mp3")
     os.system("mpg321 pngreader.mp3")
     os.remove("pngreader.mp3")
+
+
+def jpgReader():
+    readFileName = input("Enter a .jpg file name: ")
+    text = pytesseract.image_to_string(Image.open(readFileName))
+    print(text)
+    tts = gTTS(text=text, lang=lan, slow=False)
+    tts.save("jpgreader.mp3")
+    os.system("mpg321 jpgreader.mp3")
+    os.remove("jpgreader.mp3")
+"""
+TODO: read all images not just the first 2. Convert image words to string 
+"""
+def epubReader():
+    readFileName = input("Enter a .epub file name: ")
+    text = epub.read_epub(readFileName)
+    for i in text.get_items_of_type(ebooklib.ITEM_IMAGE):
+        print (i)
+        

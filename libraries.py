@@ -14,5 +14,5 @@ except ImportError:
 import pytesseract
 
 #print errors
-from error import *  
+from logistics import *  
 
